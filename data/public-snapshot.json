@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-08-23",
+  "website": "https://www.zhihailib.com/",
+  "public_status": "online",
+  "collection_label": "17万+",
+  "search_fields": [
+    "书名",
+    "作者",
+    "出版社",
+    "ISBN"
+  ],
+  "download_limits": {
+    "free_by_points_level": "每日5–25次",
+    "sponsor": "每日100次"
+  },
+  "advertising_statement": "无弹窗广告；部分页面可能包含少量推广位",
+  "online_reader_verified": false,
+  "automatic_copyright_ownership_check": false,
+  "repository_hosts_ebook_files": false
+}

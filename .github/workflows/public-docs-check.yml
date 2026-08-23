@@ -1,0 +1,35 @@
+name: 公开文档检查
+
+on:
+  push:
+    paths:
+      - "**.md"
+      - "data/public-snapshot.json"
+      - "scripts/check_public_docs.py"
+      - ".github/workflows/public-docs-check.yml"
+  pull_request:
+    paths:
+      - "**.md"
+      - "data/public-snapshot.json"
+      - "scripts/check_public_docs.py"
+      - ".github/workflows/public-docs-check.yml"
+  schedule:
+    - cron: "17 1 * * 1"
+      timezone: "Asia/Shanghai"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-public-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: 配置Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.13"
+      - name: 检查公开文档
+        run: python scripts/check_public_docs.py
